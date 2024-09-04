@@ -1,37 +1,45 @@
 "use client"
 import Link from "next/link";
+import Image from "next/image"; // Importing the Image component from next/image
 import { useEffect, useState } from "react";
 
-export default function CheckingMONGO(){
-    const [posts, setPosts] = useState([])
+export default function CheckingMONGO() {
+  const [posts, setPosts] = useState([]);
 
-    useEffect(() => {
-        console.log(process.env.NEXT_PUBLIC_API_URL, 'API_URL')
-        fetch(process.env.NEXT_PUBLIC_API_URL+'/posts')
-        .then((res) => res.json())
-        .then(res => setPosts(res))
-      },[])
+  useEffect(() => {
+    console.log(process.env.NEXT_PUBLIC_API_URL, 'API_URL');
+    fetch(process.env.NEXT_PUBLIC_API_URL + '/posts')
+      .then((res) => res.json())
+      .then((res) => setPosts(res));
+  }, []);
 
-      if(posts.length === 0 ){
-        return <div className="min-h-screen bg-white">
-          <p className="font-semibold flex justify-center">Loading</p>
-        </div>
-      }
+  if (posts.length === 0) {
+    return (
+      <div className="min-h-screen bg-white">
+        <p className="font-semibold flex justify-center">Loading</p>
+      </div>
+    );
+  }
 
-    return(
-        <div className="min-h-screen">
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  return (
+    <div className="min-h-screen">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {posts.map((post) => (
-          <Link href={'/post/'+post._id}>
-          <div key={post._id} className='border border-black p-4 bg-white'>
-          <img src={post.images} alt="Sample" className="w-full h-48 object-cover mb-4" />
-          <br />
-          <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
-          <p>{post.short_description}</p>
-        </div>
-        </Link>
+          <Link href={'/post/' + post._id} key={post._id}>
+            <div className="border border-black p-4 bg-white">
+              <Image
+                src={post.images}
+                alt="Sample"
+                className="w-full h-48 object-cover mb-4"
+                width={500}  // Set an appropriate width
+                height={300} // Set an appropriate height
+              />
+              <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
+              <p>{post.short_description}</p>
+            </div>
+          </Link>
         ))}
       </div>
-        </div>
-    )
+    </div>
+  );
 }
