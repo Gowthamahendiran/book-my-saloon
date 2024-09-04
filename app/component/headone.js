@@ -13,7 +13,7 @@ export default function Header() {
     <header className="shadow-lg bg-white">
       <div className="container mx-auto px-4 py-6 flex justify-between items-center">
         <Link href="/">
-          <h1 className="font-bold text-2xl">Book My Saloon</h1>
+          <h1 className="font-bold text-2xl text-black">Book My Saloon</h1>
         </Link>
         {/* Hamburger Menu Icon */}
         <button
@@ -41,16 +41,16 @@ export default function Header() {
             isMenuOpen ? "block" : "hidden"
           } md:flex flex-col md:flex-row md:items-center absolute md:static top-16 left-0 md:top-0 md:left-auto w-full md:w-auto bg-white md:bg-transparent p-4 md:p-0 shadow-lg md:shadow-none md:space-x-6`}
         >
-          <Link href="/" className="block md:inline hover:text-yellow-500 mb-2 md:mb-0">
+          <Link href="/" className="block md:inline hover:text-yellow-500 mb-2 md:mb-0  text-black">
             Home
           </Link>
-          <Link href="/" className="block md:inline hover:text-yellow-500 mb-2 md:mb-0">
+          <Link href="/" className="block md:inline hover:text-yellow-500 mb-2 md:mb-0  text-black">
             About us
           </Link>
-          <Link href="/" className="block md:inline hover:text-yellow-500 mb-2 md:mb-0">
+          <Link href="/" className="block md:inline hover:text-yellow-500 mb-2 md:mb-0  text-black">
             Saloon Tour
           </Link>
-          <Link href="/" className="block md:inline hover:text-yellow-500 mb-2 md:mb-0">
+          <Link href="/" className="block md:inline hover:text-yellow-500 mb-2 md:mb-0  text-black">
             Help
           </Link>
           <button className="block md:inline w-full md:w-auto bg-yellow-300 text-black font-semibold py-2 px-4 rounded-lg shadow-lg hover:bg-yellow-500 transition duration-300 ease-in-out mt-4 md:mt-0">

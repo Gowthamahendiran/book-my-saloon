@@ -39,7 +39,7 @@ export default function Home() {
                 id="gender"
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-lg"
+                className="w-full p-2 border border-gray-300 rounded-lg text-black"
               >
                 <option value="">Select Gender</option>
                 <option value="male">Male</option>
@@ -54,7 +54,7 @@ export default function Home() {
                 id="guests"
                 value={guests}
                 onChange={(e) => setGuests(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-lg"
+                className="w-full p-2 border border-gray-300 rounded-lg  text-black"
               >
                 <option value="">Select Guests</option>
                 <option value="1">1</option>
@@ -65,11 +65,11 @@ export default function Home() {
             </div>
 
             <div className="flex-1">
-              <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-2">Date</label>
+              <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-2 ">Date</label>
               <DatePicker
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
-                className="w-full p-2 border border-gray-300 rounded-lg"
+                className="w-full p-2 border border-gray-300 rounded-lg  text-black"
                 dateFormat="MMMM d, yyyy"
               />
             </div>
