@@ -2,7 +2,7 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import CheckingMONGO from '../app/component/CheckingMONGO'
 
 export default function Home() {
   const [gender, setGender] = useState("");
@@ -14,6 +14,8 @@ export default function Home() {
   };
 
   return (
+    <>
+   
     <div className="bg-white">
     <main className="flex min-h-screen">
       <div
@@ -74,7 +76,6 @@ export default function Home() {
               />
             </div>
 
-            {/* Search Button */}
             <div className="flex-1 flex items-center">
               <button
                 onClick={handleSearch}
@@ -85,8 +86,11 @@ export default function Home() {
             </div>
           </div>
         </div>
+
       </div>
     </main>
+    <CheckingMONGO />
     </div>
+    </>
   );
 }
