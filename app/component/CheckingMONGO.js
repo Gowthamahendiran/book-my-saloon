@@ -1,6 +1,5 @@
 "use client"
 import Link from "next/link";
-import Image from "next/image"; // Importing the Image component from next/image
 import { useEffect, useState } from "react";
 
 export default function CheckingMONGO() {
@@ -27,7 +26,7 @@ export default function CheckingMONGO() {
         {posts.map((post) => (
           <Link href={'/post/' + post._id} key={post._id}>
             <div className="border border-black p-4 bg-white">
-              <Image
+              <img
                 src={post.images}
                 alt="Sample"
                 className="w-full h-48 object-cover mb-4"
